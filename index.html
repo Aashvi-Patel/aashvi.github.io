@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ap’s space</title>
+<style>
+:root{--bg:#e6f2d2;--pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cellipse cx='12' cy='12' rx='7' ry='4' fill='%23b7d792' transform='rotate(-30 12 12)'/%3E%3Cellipse cx='36' cy='34' rx='7' ry='4' fill='%23b7d792' transform='rotate(25 36 34)'/%3E%3C/svg%3E");--nav:#4f84cf;--navtext:#fff;--box:#fff;--alt:#d3e5fa;--line:#4f84cf;--head:#ff9933;--headtext:#fff;--text:#111;--link:#0033cc;--spark:#ff6600;--btn:#fffbe0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14001f;--pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cellipse cx='12' cy='12' rx='7' ry='4' fill='%232a0a45' transform='rotate(-30 12 12)'/%3E%3Cellipse cx='36' cy='34' rx='7' ry='4' fill='%232a0a45' transform='rotate(25 36 34)'/%3E%3C/svg%3E");--nav:#2b0f5e;--box:#1f0836;--alt:#2f0f52;--line:#ff3fa4;--head:#ff3fa4;--text:#f4e9ff;--link:#7df9ff;--spark:#7df9ff;--btn:#3a1266}}
+:root[data-theme="dark"]{--bg:#14001f;--pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cellipse cx='12' cy='12' rx='7' ry='4' fill='%232a0a45' transform='rotate(-30 12 12)'/%3E%3Cellipse cx='36' cy='34' rx='7' ry='4' fill='%232a0a45' transform='rotate(25 36 34)'/%3E%3C/svg%3E");--nav:#2b0f5e;--box:#1f0836;--alt:#2f0f52;--line:#ff3fa4;--head:#ff3fa4;--text:#f4e9ff;--link:#7df9ff;--spark:#7df9ff;--btn:#3a1266}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) var(--pat);color:var(--text);font:12px/1.5 Verdana,Geneva,sans-serif;position:relative;overflow-x:hidden}
+a{color:var(--link)}
+.nav{background:var(--nav);color:var(--navtext);border-bottom:3px solid var(--head)}
+.nav .in{max-width:960px;margin:auto;padding:6px 10px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}
+.logo{font:italic bold 26px "Trebuchet MS",Verdana,sans-serif;color:#fff;text-shadow:2px 2px 0 #1b3f80;text-decoration:none;letter-spacing:-1px}
+.nav a.l{color:#fff;font-weight:bold;text-decoration:none}
+.nav a.l:hover{text-decoration:underline}
+.nav .sp2{flex:1}
+.nav input,.nav button,.btn{font:11px Verdana,sans-serif}
+.nav button,.btn{background:var(--btn);color:var(--text);border:2px outset #ccc;padding:2px 8px;cursor:pointer}
+.nav button:active,.btn:active{border-style:inset}
+.mq{background:#000;color:#0f0;font:bold 12px "Courier New",monospace;overflow:hidden;white-space:nowrap;padding:3px 0}
+.mq span{display:inline-block;padding-left:100%;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+.wrap{max-width:960px;margin:12px auto;padding:0 10px}
+.cols{display:grid;grid-template-columns:300px 1fr;gap:12px;align-items:start}
+.box{background:var(--box);border:2px solid var(--line);margin-bottom:12px}
+.box h2{margin:0;background:var(--head);color:var(--headtext);font:bold 13px "Trebuchet MS",Verdana,sans-serif;padding:3px 8px}
+.bd{padding:8px}
+.name{font:bold 24px "Comic Sans MS","Comic Neue",cursive;margin:0 0 2px;background:var(--alt);padding:4px 8px;border-bottom:2px dotted var(--line)}
+.me{display:flex;gap:10px}
+.me svg{flex:none;border:2px solid var(--line);background:var(--alt)}
+.small{font-size:11px}
+.status{color:#1a9d1a;font-weight:bold}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.btns .btn{padding:5px 4px;text-align:center}
+.msg{min-height:1.5em;margin:6px 0 0;font-weight:bold;color:var(--head)}
+.player{background:#000;color:#0f0;font:11px "Courier New",monospace;padding:8px;border:2px inset #888}
+.eq{display:flex;gap:2px;align-items:flex-end;height:18px;margin:6px 0}
+.eq i{width:5px;height:4px;background:#0f0;display:block}
+.playing .eq i{animation:eq .6s ease-in-out infinite alternate}
+.playing .eq i:nth-child(2n){animation-delay:.15s}.playing .eq i:nth-child(3n){animation-delay:.3s}
+@keyframes eq{to{height:18px}}
+.player button{background:#222;color:#0f0;border:1px solid #0f0;font:11px "Courier New",monospace;cursor:pointer;padding:1px 8px}
+.count{font:bold 16px "Courier New",monospace;background:#000;color:#0f0;display:inline-block;padding:2px 8px;letter-spacing:3px;border:2px inset #888}
+table{border-collapse:collapse;width:100%}
+td,th{border:1px solid var(--line);padding:4px 6px;text-align:left;vertical-align:top}
+th{background:var(--alt);width:28%}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.proj div{background:var(--alt);border:1px dashed var(--line);padding:6px 8px}
+.proj b{display:block;font-size:13px}
+.pj{cursor:pointer}.pj:hover{border-style:solid;background:var(--btn)}
+.pj::after{content:"click to open ▸";display:block;font-size:10px;color:var(--link);margin-top:4px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}
+.ov[hidden]{display:none}
+.win{width:min(440px,100%);max-height:90vh;display:flex;flex-direction:column;background:var(--box);color:var(--text);border:3px outset var(--line);box-shadow:5px 5px 0 rgba(0,0,0,.5);animation:pop .15s ease-out}
+@keyframes pop{from{transform:scale(.9);opacity:0}}
+.tb{display:flex;justify-content:space-between;align-items:center;gap:8px;background:linear-gradient(90deg,var(--nav),var(--head));color:#fff;font:bold 12px "Trebuchet MS",Verdana,sans-serif;padding:3px 4px 3px 8px;cursor:move;touch-action:none;user-select:none}
+.tb .btn{padding:0 7px;font-weight:bold}
+.wb{padding:10px;overflow:auto}
+.wb h3{margin:0 0 6px;font:bold 16px "Comic Sans MS","Comic Neue",cursive}
+.wb .ic{float:left;font-size:34px;line-height:1;margin:0 10px 4px 0}
+.wb table{clear:both;margin-top:6px}
+.wf{padding:6px 10px 10px;text-align:right}
+@media (prefers-reduced-motion:reduce){.win{animation:none}}
+.top8{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.top8 div{overflow-wrap:anywhere}
+.top8 .av{height:58px;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--alt);border:2px solid var(--line);margin-bottom:2px}
+.post{border-bottom:1px dotted var(--line);padding:4px 0 6px}
+.post:last-child{border:0}
+.post h3{margin:0;font-size:12px}
+.cm{display:flex;gap:8px;padding:6px 0;border-bottom:1px dotted var(--line)}
+.cm .a{flex:none;width:44px;height:44px;border:2px solid var(--line);background:var(--alt);display:flex;align-items:center;justify-content:center;font-size:22px}
+.cm p{margin:0}
+form.c{display:grid;gap:6px;margin-top:8px}
+form.c input,form.c textarea,select{font:12px Verdana,sans-serif;padding:3px;border:2px inset #aaa;background:#fff;color:#111;width:100%}
+.foot{text-align:center;font-size:11px;padding:10px 0 20px}
+.sparkle{position:absolute;pointer-events:none;color:var(--spark);font-size:14px;animation:sp .7s forwards;z-index:9}
+@keyframes sp{to{opacity:0;transform:translateY(14px) scale(.4)}}
+:focus-visible{outline:3px solid var(--head);outline-offset:1px}
+@media (max-width:720px){.cols{grid-template-columns:1fr}.top8{grid-template-columns:repeat(2,1fr)}.proj{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.mq span{animation:none;padding-left:8px}.playing .eq i{animation:none;height:12px}}
+</style>
+</head>
+<body>
+<div class="nav"><div class="in">
+<a class="logo" href="#top" id="top">ap’s space</a>
+<a class="l" href="#home">Home</a><a class="l" href="#projects">Projects</a><a class="l" href="#blog">Blog</a><a class="l" href="#friends">Top 8</a><a class="l" href="#comments">Comments</a>
+<span class="sp2"></span>
+<button type="button" id="theme">Night mode</button>
+</div></div>
+<div class="mq"><span>★ welcome to my page!! ★ plant genomics ★ common bean (Phaseolus vulgaris) ★ please sign my comments ★ thx for visiting ★ now with 100% more variants ★</span></div>
+
+<div class="wrap" id="home"><div class="cols">
+<div>
+<div class="box"><div class="name">ap</div>
+<div class="bd">
+<div class="me">
+<svg width="110" height="110" viewBox="0 0 110 110" role="img" aria-label="Cartoon bean wearing sunglasses"><path d="M18 62c-6-26 14-46 40-44 28 2 40 26 30 48-10 22-40 30-58 20-8-5-11-14-12-24z" fill="#8b4a2b"/><path d="M26 56c-2-18 12-30 30-28" stroke="#b9713f" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="34" y="46" width="22" height="13" rx="4" fill="#111"/><rect x="60" y="46" width="22" height="13" rx="4" fill="#111"/><path d="M56 51h4" stroke="#111" stroke-width="3"/><path d="M42 74q14 12 30 0" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+<div class="small">Plant genomics researcher<br>Southern Ontario, Canada<br><br><span class="status">● Online now</span><br>Last login: <span id="date">today</span></div>
+</div>
+<p class="small"><b>Mood:</b> <span id="moodTxt">☕ caffeinated</span><br>
+<select id="mood" aria-label="Change mood"><option>☕ caffeinated</option><option>🧬 sequencing</option><option>😵 debugging</option><option>🌱 hopeful</option><option>🎉 p &lt; 0.05</option></select></p>
+</div></div>
+
+<div class="box"><h2>Contacting ap</h2><div class="bd">
+<div class="btns">
+<button class="btn" data-m="Message sent! (pretend)">✉ Send Message</button>
+<button class="btn" id="friend" data-m="Friend request sent!">➕ Add to Friends</button>
+<button class="btn" data-m="Added to favorites ★">★ Add to Favorites</button>
+<button class="btn" data-m="Thanks, you ranked ap 10/10 beans.">🫘 Rank User</button>
+</div>
+<p class="msg" id="msg" role="status"></p>
+</div></div>
+
+<div class="box"><h2>ap’s Mix Tape</h2><div class="bd">
+<div class="player" id="pl"><b>Now playing:</b><br>“Variant Calling Blues” – The Pipeline Boys
+<div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<button type="button" id="play">▶ play</button> <span id="plst">paused</span></div>
+</div></div>
+
+<div class="box"><h2>ap’s Details</h2><div class="bd"><table>
+<tr><th>Status</th><td>Pipeline running</td></tr>
+<tr><th>Here for</th><td>Collaborations, networking</td></tr>
+<tr><th>Region</th><td>Southern Ontario, Canada</td></tr>
+<tr><th>Occupation</th><td>Plant genomics researcher</td></tr>
+<tr><th>Works on</th><td>Common bean</td></tr>
+</table></div></div>
+
+<div class="box"><h2>Profile views</h2><div class="bd" style="text-align:center"><span class="count" id="cnt">001337</span></div></div>
+</div>
+
+<div>
+<div class="box"><h2>ap’s Blurbs</h2><div class="bd">
+<p><b>About me:</b> Hi!! I’m ap. I study the genetics of common bean (<i>Phaseolus vulgaris</i>): calling variants from sequencing data, finding the genes behind traits with GWAS, and figuring out how the same line behaves in different field environments.</p>
+<p><b>Who I’d like to meet:</b> Breeders, statisticians, bioinformaticians, and anyone who has ever written “final_v2_REAL_final.R”.</p>
+</div></div>
+
+<div class="box" id="projects"><h2>My Projects</h2><div class="bd"><div class="proj">
+<div class="pj" role="button" tabindex="0" data-p="0"><b>GBS variant-calling pipeline</b>Raw sequencing reads to filtered, analysis-ready variant files for bean diversity panels.</div>
+<div class="pj" role="button" tabindex="0" data-p="1"><b>GWAS in dry bean</b>Single- and multi-trait association scans to find genomic regions that control traits.</div>
+<div class="pj" role="button" tabindex="0" data-p="2"><b>Multi-environment trials</b>Modeling genotype-by-environment interaction across field sites in R.</div>
+<div class="pj" role="button" tabindex="0" data-p="3"><b>Genomic selection tooling</b>An R Shiny + Python app so breeders can run predictions without touching a terminal.</div>
+</div><p class="small">Click a project to open its window. (Swap in your real links and papers here!)</p></div></div>
+
+<div class="box"><h2>ap’s Interests</h2><div class="bd"><table>
+<tr><th>General</th><td>Genomics, bean breeding, R, Python, Linux, gardening, web design</td></tr>
+<tr><th>Music</th><td>Whatever plays during a six-hour alignment job</td></tr>
+<tr><th>Books</th><td>Molecular Biology of the Cell; anything with a good methods section</td></tr>
+<tr><th>Heroes</th><td>Barbara McClintock, Gregor Mendel (peas were just the warm-up)</td></tr>
+</table></div></div>
+
+<div class="box" id="blog"><h2>ap’s Blog [<a href="#blog" style="color:#fff">view more</a>]</h2><div class="bd">
+<div class="post"><h3>Why my VCF has more missing data than my fridge has food</h3><span class="small">Posted today, 2:14 AM · Mood: 😵 debugging</span></div>
+<div class="post"><h3>G×E is just the beans being dramatic</h3><span class="small">Posted last week · Mood: 🌱 hopeful</span></div>
+<div class="post"><h3>A love letter to the Manhattan plot</h3><span class="small">Posted last month · Mood: 🎉 p &lt; 0.05</span></div>
+</div></div>
+
+<div class="box" id="friends"><h2>ap’s Top 8 Tools</h2><div class="bd">
+<p class="small">ap has <b>8</b> tools in the Top 8.</p>
+<div class="top8">
+<div><div class="av">📊</div><a href="#friends">R</a></div>
+<div><div class="av">🐍</div><a href="#friends">Python</a></div>
+<div><div class="av">🧬</div><a href="#friends">bcftools</a></div>
+<div><div class="av">🏔</div><a href="#friends">FarmCPU</a></div>
+<div><div class="av">🌍</div><a href="#friends">metan</a></div>
+<div><div class="av">⚡</div><a href="#friends">Fast-GBS</a></div>
+<div><div class="av">✨</div><a href="#friends">Shiny</a></div>
+<div><div class="av">🐧</div><a href="#friends">Linux</a></div>
+</div></div></div>
+
+<div class="box" id="comments"><h2>ap’s Friends Comments</h2><div class="bd">
+<p class="small">Displaying <b id="cn">3</b> comments</p>
+<div id="list">
+<div class="cm"><div class="a">🌽</div><p><b>Phaseolus_Fan_2003</b><br>ur page rocks!! add me back!!</p></div>
+<div class="cm"><div class="a">👑</div><p><b>xX_alleleQueen_Xx</b><br>lol the missing data post. so true ☆☆☆</p></div>
+<div class="cm"><div class="a">🎓</div><p><b>Dr. Legume</b><br>great peaks. that Manhattan plot looks like a real skyline.</p></div>
+</div>
+<form class="c" id="cf">
+<label>Your name <input id="cname" maxlength="30" placeholder="xX_yourname_Xx"></label>
+<label>Comment <textarea id="ctext" rows="3" maxlength="200" required></textarea></label>
+<button class="btn" type="submit">Post comment</button>
+</form>
+</div></div>
+</div></div></div>
+<div class="ov" id="ov" hidden><div class="win" id="win" role="dialog" aria-modal="true" aria-labelledby="wt"><div class="tb" id="tb"><span id="wt"></span><button type="button" class="btn" id="wx" aria-label="Close window">X</button></div><div class="wb" id="wbody"></div><div class="wf"><button type="button" class="btn" id="wok">OK</button></div></div></div>
+<div class="foot">© 2000-something ap’s space · best viewed at 1024×768 · <a href="#top">back to top</a></div>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)');
+$('date').textContent=new Date().toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'});
+$('mood').onchange=function(){$('moodTxt').textContent=this.value};
+var n=1337;
+try{n=(parseInt(localStorage.getItem('apviews'),10)||1336)+1;localStorage.setItem('apviews',n)}catch(e){}
+$('cnt').textContent=String(n).padStart(6,'0');
+document.querySelectorAll('[data-m]').forEach(function(b){b.onclick=function(){$('msg').textContent=b.getAttribute('data-m');if(b.id==='friend'){b.textContent='✔ Request sent'}}});
+var pl=$('pl');$('play').onclick=function(){var on=pl.classList.toggle('playing');this.textContent=on?'❚❚ pause':'▶ play';$('plst').textContent=on?'playing (no sound, sorry)':'paused'};
+$('theme').onclick=function(){var r=document.documentElement,d=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);r.setAttribute('data-theme',d?'light':'dark');this.textContent=d?'Night mode':'Day mode'};
+$('cf').onsubmit=function(e){e.preventDefault();var t=$('ctext').value.trim();if(!t)return;var nm=$('cname').value.trim()||'anonymous';
+var d=document.createElement('div');d.className='cm';var a=document.createElement('div');a.className='a';a.textContent='🫘';var p=document.createElement('p');var b=document.createElement('b');b.textContent=nm;p.appendChild(b);p.appendChild(document.createElement('br'));p.appendChild(document.createTextNode(t));d.appendChild(a);d.appendChild(p);
+$('list').insertBefore(d,$('list').firstChild);$('cn').textContent=$('list').children.length;this.reset()};
+var P=[
+{i:'🧬',t:'GBS variant-calling pipeline',d:'Turns raw genotyping-by-sequencing reads into a clean, filtered set of variants for a bean diversity panel.',r:[['Input','Raw sequencing reads'],['Steps','Demultiplex, align, call variants, filter on depth, missing data and allele frequency'],['Tools','Linux, Fast-GBS, bcftools'],['Output','Analysis-ready SNP file (VCF)']]},
+{i:'🏔',t:'GWAS in dry bean',d:'Association scans that link regions of the genome to traits, one trait at a time and several traits together.',r:[['Input','SNP genotypes plus trait data from field trials'],['Methods','FarmCPU, multi-trait GWAS'],['Tools','R'],['Output','Manhattan and QQ plots, candidate regions']]},
+{i:'🌍',t:'Multi-environment trials',d:'Works out how each bean line performs across field sites and years, and how much of that depends on the environment.',r:[['Input','Phenotype data from several locations'],['Methods','Mixed models, genotype-by-environment analysis, stability rankings'],['Tools','R, metan'],['Output','Which lines win where, and which are steady everywhere']]},
+{i:'✨',t:'Genomic selection tooling',d:'A point-and-click app so breeders can run GWAS and genomic prediction without writing code.',r:[['Input','Genotype and phenotype files'],['Tools','R Shiny, Python'],['Output','Plots and predicted performance for each line'],['Status','Always one more feature to add']]}
+];
+var ov=$('ov'),win=$('win'),tb=$('tb'),dx=0,dy=0,sx=0,sy=0,dg=false,from=null;
+function openP(k,el){var p=P[k];from=el;dx=dy=0;win.style.transform='';$('wt').textContent=p.t+'.exe';
+$('wbody').innerHTML='<span class="ic">'+p.i+'</span><h3>'+p.t+'</h3><p>'+p.d+'</p><table>'+p.r.map(function(x){return '<tr><th>'+x[0]+'</th><td>'+x[1]+'</td></tr>'}).join('')+'</table><p class="small">(Placeholder text: edit me!)</p>';
+ov.hidden=false;$('wx').focus()}
+function closeP(){ov.hidden=true;if(from)from.focus()}
+document.querySelectorAll('.pj').forEach(function(el){var k=el.getAttribute('data-p');el.onclick=function(){openP(k,el)};el.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openP(k,el)}}});
+$('wx').onclick=closeP;$('wok').onclick=closeP;
+ov.onclick=function(e){if(e.target===ov)closeP()};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ov.hidden)closeP()});
+tb.onpointerdown=function(e){if(e.target.closest('button'))return;dg=true;sx=e.clientX-dx;sy=e.clientY-dy;tb.setPointerCapture(e.pointerId)};
+tb.onpointermove=function(e){if(!dg)return;dx=e.clientX-sx;dy=e.clientY-sy;win.style.transform='translate('+dx+'px,'+dy+'px)'};
+tb.onpointerup=function(){dg=false};
+var last=0;document.addEventListener('mousemove',function(e){var t=Date.now();if(rm.matches||t-last<45)return;last=t;var s=document.createElement('span');s.className='sparkle';s.textContent='✦';s.style.left=e.pageX+'px';s.style.top=e.pageY+'px';document.body.appendChild(s);setTimeout(function(){s.remove()},700)});
+})();
+</script>
+</body>
+</html>
